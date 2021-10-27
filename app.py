@@ -1,13 +1,7 @@
 import requests
 import xlsxwriter
-import openpyxl
 
-wb = openpyxl.load_workbook('Example2.xlsx')
-sheet = wb.active
-
-page_number = 1
-sort_by = 4
-
+# slug categories digikala
 category_list = [
     "category-men-blazers-suits",
     "category-men-homewear",
@@ -175,12 +169,13 @@ category_list = [
     "category-badge"
 
 ]
-workbook = xlsxwriter.Workbook('Example2.xlsx')
+
+workbook = xlsxwriter.Workbook('results.xlsx')
 worksheet = workbook.add_worksheet()
+page_number = 1
+sort_by = 4
+row = 0
 
-row = 0 #sheet.max_row
-
-print(row)
 
 for category in category_list:
     for i in range(1, 30):
